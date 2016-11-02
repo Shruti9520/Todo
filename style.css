@@ -1,0 +1,15 @@
+.done-true{
+color: grey;
+}
+.bg-1 {
+      background-color: #1abc9c;
+      color: #ffffff;
+  }
+.container-fluid {
+      padding-top: 40px;
+      padding-bottom: 40px;
+  }
+.bg-4 { 
+    background-color: #2f2f2f;
+    color: #ffffff;
+}

@@ -1,0 +1,52 @@
+<html ng-app="Todo">
+<head>
+	<title>Todo Application</title>
+	<!--For BootStrap-->
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--Font-awesome-->
+     <link  rel="stylesheet"  href="/home/shruti/Desktop/BLOG/font-awesome-4.6.3/css/font-awesome.min.css">
+  <!--For AngularJS-->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js">
+	</script>
+	<script src="TodoCtrl.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="select.ico" type="image" sizes="16x16">
+</head>
+<body>
+    <div class="container-fluid bg-1 text-center">
+<h2>LIST OF ITEMS</h2>
+    </div>
+<div class="container-fluid bg-2">
+  <div class="col-sm-3"></div>
+    <div class="col-sm-6">
+  	<div class="text-center">
+<div ng-controller="TodoCtrl" name="myForm">
+<h2>Todal Number of items:{{todolength()}}</h2>
+<ul class="list-unstyled"><!--For bootstrap 2 the class should be just "unstyled"-->
+	<li ng-repeat="x in todos">
+	<input type="checkbox" ng-model="x.done">
+		<span class="done-{{x.done}}">{{x.text}}</span>
+	</li>
+</ul>
+    <form>
+    <input type="text" name="todoText" ng-model="todoText" ng-model-instant required>
+     <button class="btn btn-info btn-sm" ng-click="addTodo()"><span class="glyphicon glyphicon-plus"></span>Add</button>
+        </form>
+    <button class="btn btn-success btn-sm" ng-click="clearTodo()"><span class="glyphicon glyphicon-trash"></span>Delete</button>
+	
+    
+    </div>
+</div>
+  </div>
+  <div class="col-sm-3"></div>
+</div>
+   <footer class="container-fluid bg-4 text-center">
+  <p>Made By <a href="https://shruti9520.github.io">Shruti Singh</a></p> 
+</footer>
+	
+</body>
+</html>
