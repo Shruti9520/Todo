@@ -9,10 +9,11 @@ app.controller('TodoCtrl', function($scope){
         return $scope.todos.length;
     }
     $scope.clearTodo=function(){
-         $scope.errortext = "";
-        $scope.todos= $scope.todos.filter(function(x){
-            return !x.done;
-        })
+         var oldList= $scope.todos;
+        $scope.todos=[]; 
+        angular.forEach(oldList, function(x) {
+            if (!x.done) $scope.todos.push(x);
+        });
     }
     $scope.addTodo=function(){
         if( !$scope.todoText)
